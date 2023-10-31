@@ -1,5 +1,31 @@
 # 环境配置
 
+## -1.update
+
+我更新了一版cmake，希望能简化构建流程，现在基本上你只需要确保你安装了java就好了（见0.依赖环境准备）。
+
+### 构建命令
+
+在项目根目录
+
+```
+mkdir build && cd build
+cmake ../
+make
+```
+
+### 测试方法
+
+在build目录中
+
+```
+./MyCompiler ../test/simple.c
+```
+
+你可以修改cmakelist更改可执行文件名，../test/simple.c可以更换为任意待测文件。
+
+
+
 ## 第一部分：antlr本体的安装
 
 ### 0.依赖环境准备
