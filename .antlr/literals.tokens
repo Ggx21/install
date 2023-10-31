@@ -1,0 +1,6 @@
+DecIntConst=1
+OctIntConst=2
+HexIntConst=3
+DecFloatConst=4
+HexFloatConst=5
+StringConst=6

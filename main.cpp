@@ -1,9 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include "antlr4-runtime.h"
-#include "CBaseVisitor.h"
-#include "CLexer.h"
-#include "CParser.h"
+#include "SysYBaseVisitor.h"
+#include "SysYLexer.h"
+#include "SysYParser.h"
 #define VISITOR 1 // 0 for listener, 1 for visitor
 
 using namespace antlr4;
@@ -16,13 +16,13 @@ int main(int argc, const char *argv[])
     ifstream stream;
     stream.open(argv[1]);
     ANTLRInputStream input(stream);
-    CLexer lexer(&input);
+    SysYLexer lexer(&input);
     CommonTokenStream tokens(&lexer);
-    CParser parser(&tokens);
-    tree::ParseTree *tree = parser.compilationUnit();
+    SysYParser parser(&tokens);
+    ParseTree *tree = parser.compUnit();
     if (VISITOR)
     {
-        CBaseVisitor visitor;
+        SysYBaseVisitor visitor;
         visitor.visit(tree);
     }
     else
@@ -30,6 +30,6 @@ int main(int argc, const char *argv[])
         // CBaseListener listener;
         // tree::ParseTreeWalker::DEFAULT.walk(&listener, tree);
     }
-    cout << tree->toStringTree(&parser) << endl;
+    cout << tree->toStringTree(&parser,true) << endl;
     return 0;
 }
