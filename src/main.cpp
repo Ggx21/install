@@ -1,9 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include "antlr4-runtime.h"
-#include "SysYBaseVisitor.h"
-#include "SysYLexer.h"
-#include "SysYParser.h"
+#include "frontend/SysYBaseVisitor.h"
+#include "frontend/SysYLexer.h"
+#include "frontend/SysYParser.h"
 #define VISITOR 1 // 0 for listener, 1 for visitor
 
 using namespace antlr4;
